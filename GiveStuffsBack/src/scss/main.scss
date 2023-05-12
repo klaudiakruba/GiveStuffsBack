@@ -1,0 +1,14 @@
+@import "./settings/all";
+
+body {
+	background: $first-white-color;
+	font-family: $font-base;
+	font-size: 20px;
+}
+
+header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	background: red;
+}
