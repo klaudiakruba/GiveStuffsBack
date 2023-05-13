@@ -17,7 +17,7 @@ const SimpleSteps = () => {
 
 			<div className="img_part">
 				<div className="simple_steps_item">
-					<img src={icon1} alt=""></img>
+					<img src={icon1} alt="T-shirt icon"></img>
 					<h4>Wybierz rzeczy</h4>
 					<span>
 						ubrania, zabawki,
@@ -25,14 +25,14 @@ const SimpleSteps = () => {
 					</span>
 				</div>
 				<div className="simple_steps_item">
-					<img src={icon2} alt=""></img>
+					<img src={icon2} alt="Shopping bag icon"></img>
 					<h4>Spakuj je</h4>
 					<span>
 						uskorzystaj z <br /> worków na śmieci
 					</span>
 				</div>
 				<div className="simple_steps_item">
-					<img src={icon3} alt=""></img>
+					<img src={icon3} alt="magnifier icon"></img>
 					<h4>
 						Zdecyduj komu <br /> chcesz pomóc
 					</h4>
@@ -41,7 +41,7 @@ const SimpleSteps = () => {
 					</span>
 				</div>
 				<div className="simple_steps_item">
-					<img src={icon4} alt=""></img>
+					<img src={icon4} alt="recycling icon"></img>
 					<h4>Zamów kuriera</h4>
 					<span>
 						kurier przyjedzie <br /> w dogodnym terminie

@@ -52,7 +52,7 @@ const HomeHeader = () => {
 						</li>
 						<li className="nav_element">
 							<ScrollLink
-								to="home"
+								to="about-us"
 								spy="true"
 								smooth={true}
 								offset={-70}

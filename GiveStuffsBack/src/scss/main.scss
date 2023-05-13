@@ -244,3 +244,55 @@ body {
 		}
 	}
 }
+
+//*****About Us *****//
+.about_us_section {
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	.left_sidebar {
+		width: 50vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100vh;
+
+		background-color: $fourth-grey-color;
+		h3 {
+			padding-top: 18.6rem;
+			font-size: 3.8rem;
+			line-height: 5.5rem;
+			letter-spacing: -0.076rem;
+			color: $first-grey-color;
+		}
+		img.decoration {
+			align-items: center;
+			padding-top: 4rem;
+			padding-bottom: 6.2rem;
+		}
+		span {
+			font-size: 3rem;
+			line-height: 5.4rem;
+			letter-spacing: -0.06rem;
+			color: $first-grey-color;
+			text-align: center;
+		}
+		img.signature {
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+			padding-top: 4rem;
+			position: absolute;
+			bottom: 18.5rem;
+			right: 57vw;
+		}
+	}
+	.right_sidebar {
+		width: 50vw;
+		position: absolute;
+		right: 0;
+		object-fit: cover;
+	}
+}
