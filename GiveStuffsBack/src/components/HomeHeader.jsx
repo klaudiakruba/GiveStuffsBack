@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import heroImage from "../assets/Hero Image.png";
 import decoration from "../assets/decoration.png";
-// import { Link, animateScroll as scroll } from "react-scroll";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 const HomeHeader = () => {
 	return (
-		<section className="home">
+		<section className="home" id="section-home">
 			<div className="home_header_left_sidebar">
 				<div>
 					<img src={heroImage} alt="box with stuffs to give away"></img>
@@ -13,18 +13,70 @@ const HomeHeader = () => {
 			</div>
 			<div className="home_header_right_sidebar">
 				<div className="log_reg_button">
-					<button>Zaloguj</button>
-					<Link className="reg_button" to="/register">
+					<Link className="log_btn" to="/login">
+						Zaloguj
+					</Link>
+					<Link className="reg_btn" to="/register">
 						Załóż konto
 					</Link>
 				</div>
 				<div className="home_navigation">
 					<ul>
-						<li className="nav_element">Start</li>
-						<li className="nav_element">O co chodzi?</li>
-						<li className="nav_element">O nas</li>
-						<li className="nav_element">Fundacja i organizacje</li>
-						<li className="nav_element">Kontakt</li>
+						<li className="nav_element">
+							<ScrollLink
+								to="home"
+								spy="true"
+								smooth={true}
+								offset={-70}
+								duration={500}
+								className="nav_link">
+								Start
+							</ScrollLink>
+						</li>
+						<li className="nav_element">
+							<ScrollLink
+								to="home"
+								spy="true"
+								smooth={true}
+								offset={-70}
+								duration={500}
+								className="nav_link">
+								O co chodzi?
+							</ScrollLink>
+						</li>
+						<li className="nav_element">
+							<ScrollLink
+								to="home"
+								spy="true"
+								smooth={true}
+								offset={-70}
+								duration={500}
+								className="nav_link">
+								O nas
+							</ScrollLink>
+						</li>
+						<li className="nav_element">
+							<ScrollLink
+								to="home"
+								spy="true"
+								smooth={true}
+								offset={-70}
+								duration={500}
+								className="nav_link">
+								Fundacja i organizacje
+							</ScrollLink>
+						</li>
+						<li className="nav_element">
+							<ScrollLink
+								to="home"
+								spy="true"
+								smooth={true}
+								offset={-70}
+								duration={500}
+								className="nav_link">
+								Kontakt
+							</ScrollLink>
+						</li>
 					</ul>
 				</div>
 				<div className="home_title_btns">
@@ -32,11 +84,13 @@ const HomeHeader = () => {
 						Zacznij pomagać! <br /> Oddaj niechciane rzeczy w zaufane ręce
 					</h1>
 					<img src={decoration} alt="decoration line"></img>
-					<div className="buttons">
-						<button className="btn">
+					<div className="tabs">
+						<Link className="btn" to="/login">
 							ODDAJ <br /> RZECZY
-						</button>
-						<button className="btn">ZORGANIZUJ ZBÓRKĘ</button>
+						</Link>
+						<Link className="btn" to="/login">
+							ZORGANIZUJ ZBÓRKĘ
+						</Link>
 					</div>
 				</div>
 			</div>

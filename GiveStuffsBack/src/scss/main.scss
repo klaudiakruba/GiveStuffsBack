@@ -39,23 +39,19 @@ body {
 .log_reg_button {
 	display: flex;
 	justify-content: flex-end;
+	align-items: center;
 	padding: 4.6rem 2rem 3.4rem 0;
 	font-size: 1.4rem;
 	color: $fifth-grey-color;
 
-	button {
-		background: none;
+	.log_btn {
 		font-size: 1.4rem;
 		color: $fifth-grey-color;
 		padding-right: 2rem;
-		border: none;
 		cursor: pointer;
-		&:focus {
-			outline: none;
-		}
 	}
 
-	.reg_button {
+	.reg_btn {
 		display: flex;
 		color: $fifth-grey-color;
 		text-align: center;
@@ -83,6 +79,9 @@ body {
 			&:hover {
 				border: 0.075rem solid $sec-grey-color;
 			}
+			.nav_link {
+				color: $first-grey-color;
+			}
 		}
 	}
 }
@@ -106,20 +105,21 @@ body {
 		object-fit: cover;
 		margin-bottom: 6.5rem;
 	}
-	.buttons {
+	.tabs {
 		display: flex;
-		justify-content: center;
 		gap: 4.4rem;
 		font-size: 3.6rem;
 
 		.btn {
+			display: flex;
 			border: 0.075rem solid $first-grey-color;
-			border-radius: 0;
 			font-weight: 300;
+			color: $first-grey-color;
+			align-items: center;
+			justify-content: center;
 			cursor: pointer;
 			width: 31rem;
 			height: 12rem;
-			padding: 1.3rem 0 1.3rem 0;
 		}
 	}
 }
