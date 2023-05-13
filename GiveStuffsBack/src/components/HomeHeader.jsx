@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 import heroImage from "../assets/Hero Image.png";
 import decoration from "../assets/decoration.png";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+
 const HomeHeader = () => {
 	return (
 		<section className="home" id="section-home">
 			<div className="home_header_left_sidebar">
 				<div>
-					<img src={heroImage} alt="box with stuffs to give away"></img>
+					{/* <div
+					style={{
+						backgroundImage: `url("${heroImage}")`,
+						width: 100,
+					}}>	 */}
+					<img src={heroImage} alt="box with stuffs to give away" />
 				</div>
 			</div>
 			<div className="home_header_right_sidebar">
@@ -35,7 +41,7 @@ const HomeHeader = () => {
 						</li>
 						<li className="nav_element">
 							<ScrollLink
-								to="home"
+								to="simple-steps"
 								spy="true"
 								smooth={true}
 								offset={-70}

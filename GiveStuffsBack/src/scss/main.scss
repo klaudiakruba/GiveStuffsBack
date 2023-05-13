@@ -7,6 +7,7 @@ html {
 body {
 	background: $first-white-color;
 	font-family: $font-base;
+	width: 100vw;
 }
 
 //***** HEADER SECTION *****//
@@ -16,16 +17,14 @@ body {
 	height: 100vh;
 	justify-content: space-between;
 	font-size: 20px;
-	margin-right: 12.2rem;
 }
 
 //main img//
 
 .home_header_left_sidebar {
-	width: 50%;
+	width: 50vw;
 	position: relative;
 	img {
-		height: 100vh;
 		object-fit: cover;
 		position: absolute;
 		bottom: 0;
@@ -33,8 +32,9 @@ body {
 	}
 }
 .home_header_right_sidebar {
-	width: 50%;
+	width: 50vw;
 	display: flex;
+	padding-right: 14.2rem;
 	flex-direction: column;
 }
 //login and create account buttons//
@@ -52,6 +52,7 @@ body {
 		color: $fifth-grey-color;
 		padding-right: 2rem;
 		cursor: pointer;
+		text-decoration: none;
 	}
 
 	.reg_btn {
@@ -62,6 +63,7 @@ body {
 		padding: 0.9rem 1rem;
 		border: 0.075rem solid $yellow-color;
 		cursor: pointer;
+		text-decoration: none;
 	}
 }
 
@@ -73,16 +75,17 @@ body {
 
 	ul {
 		display: flex;
-		gap: 5.5rem;
+		align-items: center;
 
 		.nav_element {
 			padding: 0.9rem 2rem;
-			// border: 0.075rem;
-			// border-color: transparent;
+			border: 0.075rem solid transparent;
+
 			&:hover {
 				border: 0.075rem solid $sec-grey-color;
 			}
 			.nav_link {
+				font-size: 1.8rem;
 				color: $first-grey-color;
 			}
 		}
@@ -103,6 +106,7 @@ body {
 		letter-spacing: -0.076rem;
 		color: $first-grey-color;
 		padding-bottom: 2.5rem;
+		text-align: center;
 	}
 	img {
 		object-fit: cover;
@@ -111,25 +115,25 @@ body {
 	.tabs {
 		display: flex;
 		gap: 4.4rem;
-		font-size: 3.6rem;
-
-		.btn {
-			display: flex;
-			border: 0.075rem solid $first-grey-color;
-			font-weight: 300;
-			color: $first-grey-color;
-			align-items: center;
-			justify-content: center;
-			cursor: pointer;
-			width: 31rem;
-			height: 12rem;
-		}
 	}
 }
-
+.btn {
+	display: flex;
+	border: 0.075rem solid $first-grey-color;
+	font-size: 3.6rem;
+	font-weight: 300;
+	color: $first-grey-color;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	cursor: pointer;
+	width: 31rem;
+	height: 12rem;
+	text-decoration: none;
+}
 // ******* THREE COLUMNS SECTION *****//
 .three_columns_section {
-	width: 100%;
+	width: 100vw;
 	height: 38.4rem;
 	position: relative;
 	img {
@@ -140,9 +144,10 @@ body {
 }
 
 .three_columns_items {
-	padding: 4.6rem 7.3rem 8.6rem 7.3rem;
+	padding: 4.6rem 16.3rem 8.6rem 16.3rem;
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
 	position: relative;
 	z-index: 1;
 
@@ -150,6 +155,7 @@ body {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
+		align-items: center;
 		h2 {
 			font-weight: 300;
 			font-size: 9rem;
@@ -162,17 +168,79 @@ body {
 			font-size: 1.8rem;
 			line-height: 3rem;
 			letter-spacing: -0.036rem;
-			padding-bottom: 2.8rem;
+			padding-bottom: 2.5rem;
 			color: $first-grey-color;
 		}
 		.text_item {
 			font-family: $font-alt;
 			font-size: 1.3rem;
+			text-align: center;
 			font-weight: 300;
 			letter-spacing: -0.032rem;
 			line-height: 2.6rem;
 			color: $first-grey-color;
 			max-width: 33.4rem;
+		}
+	}
+}
+
+//****** FOUR SIMPLE STEPS *****//
+.simple_steps_section {
+	// width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 5.5rem 0 8rem 0;
+	.title_part {
+		text-align: center;
+		color: $first-grey-color;
+		.simple_steps_title {
+			font-size: 3.8rem;
+			letter-spacing: -0.076rem;
+			line-height: 5.5rem;
+			color: $first-grey-color;
+			padding-bottom: 2.5rem;
+		}
+		img {
+			padding-bottom: 4.1rem;
+		}
+	}
+
+	.img_part {
+		width: 100vw;
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+		padding: 7.1rem 41.4rem 6.2rem 41.4rem;
+		justify-content: space-evenly;
+		align-items: center;
+		background-color: $fourth-grey-color;
+		margin-bottom: 3.5rem;
+		.simple_steps_item {
+			text-align: center;
+			h4 {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				font-size: 1.8rem;
+				line-height: 2.4rem;
+				padding-top: 1rem;
+				color: $first-grey-color;
+				&::after {
+					content: "";
+					border: 0.1rem solid $thr-grey-color;
+					width: 7rem;
+
+					margin-top: 1.1rem;
+					margin-bottom: 1.1rem;
+				}
+			}
+			span {
+				font-size: 1.6rem;
+				line-height: 1.8rem;
+				color: $first-grey-color;
+			}
 		}
 	}
 }
