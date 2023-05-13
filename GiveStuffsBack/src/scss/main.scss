@@ -1,14 +1,54 @@
 @import "./settings/all";
 
+html {
+	font-size: 62.5%;
+	width: 100vw;
+	height: 100vh;
+}
 body {
 	background: $first-white-color;
+
 	font-family: $font-base;
 	font-size: 20px;
 }
 
-header {
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-	background: red;
+//***** HEADER SECTION *****//
+
+.home_header {
+	//login and create account buttons//
+
+	.log_reg_button {
+		display: flex;
+		font-size: 1.4rem;
+		color: $fifth-grey-color;
+		position: absolute;
+		top: 3.7rem;
+		right: 13.9rem;
+
+		button {
+			background: none;
+			font-size: 1.4rem;
+			color: $fifth-grey-color;
+			padding-right: 2rem;
+			border: none;
+			cursor: pointer;
+			&:focus {
+				outline: none;
+			}
+		}
+
+		.reg_button {
+			display: flex;
+			color: $fifth-grey-color;
+			text-align: center;
+			justify-content: center;
+			padding: 0.9rem 1rem;
+			border: 0.075rem solid $yellow-color;
+			cursor: pointer;
+		}
+	}
+
+	// main navigation //
+	.home_navigation {
+	}
 }
