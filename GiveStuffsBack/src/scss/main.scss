@@ -186,7 +186,7 @@ body {
 
 //****** FOUR SIMPLE STEPS *****//
 .simple_steps_section {
-	// width: 100%;
+	width: 100vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -208,12 +208,14 @@ body {
 	}
 
 	.img_part {
-		width: 100vw;
+		width: 100%;
+		height: 32.5rem;
+
 		display: flex;
 		flex-direction: row;
-		flex-grow: 1;
-		padding: 7.1rem 41.4rem 6.2rem 41.4rem;
-		justify-content: space-evenly;
+		// padding: 7.1rem 41.4rem 6.2rem 41.4rem;
+		gap: 17.3rem;
+		justify-content: center;
 		align-items: center;
 		background-color: $fourth-grey-color;
 		margin-bottom: 3.5rem;
@@ -294,5 +296,6 @@ body {
 		position: absolute;
 		right: 0;
 		object-fit: cover;
+		overflow: hidden;
 	}
 }
