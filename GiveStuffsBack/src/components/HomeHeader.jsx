@@ -14,7 +14,7 @@ const HomeHeader = () => {
 						backgroundImage: `url("${heroImage}")`,
 						width: 100,
 					}}>	 */}
-					<img src={heroImage} alt="box with stuffs to give away" />
+					<img src={heroImage} alt="box with stuffs to leave" />
 				</div>
 			</div>
 			<div className="home_header_right_sidebar">
@@ -63,7 +63,7 @@ const HomeHeader = () => {
 						</li>
 						<li className="nav_element">
 							<ScrollLink
-								to="home"
+								to="who-we-help"
 								spy="true"
 								smooth={true}
 								offset={-70}
@@ -74,7 +74,7 @@ const HomeHeader = () => {
 						</li>
 						<li className="nav_element">
 							<ScrollLink
-								to="home"
+								to="contact-us"
 								spy="true"
 								smooth={true}
 								offset={-70}

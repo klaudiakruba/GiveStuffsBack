@@ -299,3 +299,160 @@ body {
 		overflow: hidden;
 	}
 }
+
+//****** WHO WE HELP ******//
+.who_we_help_section {
+	border: 1px solid green;
+	width: 100vw;
+	height: 86.2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	color: $first-grey-color;
+	.who_we_help_title {
+		font-size: 3.8rem;
+		letter-spacing: -0.076rem;
+		line-height: 5.5rem;
+		padding-top: 7rem;
+		padding-bottom: 3.9rem;
+	}
+	.organizations {
+		display: flex;
+		padding-top: 6.9rem;
+		padding-bottom: 8rem;
+		gap: 15rem;
+
+		align-items: center;
+		.organization_name {
+			font-size: 2.4rem;
+			line-height: 2.4rem;
+		}
+	}
+	.organization_info {
+		font-size: 2.2rem;
+		line-height: 3rem;
+		padding-bottom: 6.6rem;
+	}
+}
+
+//***** CONTACT US *****/
+.contact_us_section {
+	color: $first-grey-color;
+	width: 100vw;
+	height: 102.6rem;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+	position: relative;
+
+	.background_image {
+		width: 100vw;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		object-fit: contain;
+		overflow: hidden;
+		opacity: 0.2;
+	}
+	.right_sidebar {
+		width: 52.8rem;
+		// margin-top: 20rem;
+		margin-right: 14.2rem;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+	}
+	.title_section {
+		text-align: center;
+		padding-bottom: 7rem;
+		.form_title {
+			font-size: 3.8rem;
+			padding-bottom: 3.9rem;
+		}
+	}
+	.form_section {
+		position: relative;
+		.first_form_sec {
+			display: flex;
+			flex-direction: row;
+			gap: 1.6rem;
+			padding-bottom: 4rem;
+
+			.name_email {
+				width: 25.6rem;
+				label {
+					display: block;
+					font-size: 1.6rem;
+					font-weight: 600;
+					margin-bottom: 1.2rem;
+				}
+				input {
+					width: 100%;
+					border: none;
+					border-bottom: 0.1rem solid $thr-grey-color;
+					font-size: 1.8rem;
+					&::placeholder {
+						font-weight: 400;
+						color: $sec-grey-color;
+						padding-bottom: 0.4rem;
+					}
+				}
+			}
+		}
+		.second_form_sec {
+			display: flex;
+			flex-direction: column;
+			label {
+				font-weight: 600;
+				font-size: 1.6rem;
+				padding-bottom: 1.2rem;
+			}
+			textarea {
+				width: 100%;
+				height: 9.7rem;
+				border: none;
+				border-bottom: 0.1rem solid $thr-grey-color;
+				overflow: hidden;
+				resize: none;
+				font-size: 1.8rem;
+				font-family: $font-base;
+				color: $sec-grey-color;
+				line-height: 2.4rem;
+			}
+		}
+		button {
+			border: 0.1rem solid $first-grey-color;
+			border-radius: none;
+			font-size: 1.8rem;
+			font-weight: 300;
+			color: #000;
+			padding: 1.3rem 5.2rem;
+			background-color: transparent;
+			position: absolute;
+			bottom: -8.8rem;
+			right: 0;
+		}
+	}
+}
+.footer_sec {
+	margin-right: 14.2rem;
+	padding-bottom: 2rem;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	font-size: 1.8rem;
+	color: $first-grey-color;
+	z-index: 1;
+	position: relative;
+	.footer_icons {
+		position: absolute;
+		display: flex;
+		bottom: 0;
+		right: 0;
+		gap: 2rem;
+	}
+}
