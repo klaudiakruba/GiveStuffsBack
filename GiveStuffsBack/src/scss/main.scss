@@ -359,7 +359,6 @@ body {
 	}
 	.right_sidebar {
 		width: 52.8rem;
-		// margin-top: 20rem;
 		margin-right: 14.2rem;
 		justify-content: center;
 		align-items: center;
@@ -394,6 +393,7 @@ body {
 					border: none;
 					border-bottom: 0.1rem solid $thr-grey-color;
 					font-size: 1.8rem;
+					background-color: transparent;
 					&::placeholder {
 						font-weight: 400;
 						color: $sec-grey-color;
@@ -421,6 +421,7 @@ body {
 				font-family: $font-base;
 				color: $sec-grey-color;
 				line-height: 2.4rem;
+				background-color: transparent;
 			}
 		}
 		button {
@@ -447,11 +448,13 @@ body {
 	font-size: 1.8rem;
 	color: $first-grey-color;
 	z-index: 1;
+	margin-bottom: 2rem;
 	position: relative;
+	bottom: 4.6rem;
+
 	.footer_icons {
 		position: absolute;
 		display: flex;
-		bottom: 0;
 		right: 0;
 		gap: 2rem;
 	}
