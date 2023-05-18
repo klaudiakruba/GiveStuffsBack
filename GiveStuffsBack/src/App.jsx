@@ -8,12 +8,14 @@ import {
 	NavLink,
 	Outlet,
 } from "react-router-dom";
+import LogIn from "./components/LogIn";
 
 const App = () => {
 	return (
 		<HashRouter>
 			<Routes>
 				<Route path="/" element={<Home />}></Route>
+				<Route path="/login" element={LogIn}></Route>
 			</Routes>
 		</HashRouter>
 	);

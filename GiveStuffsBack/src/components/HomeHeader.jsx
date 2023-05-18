@@ -6,7 +6,7 @@ import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const HomeHeader = () => {
 	return (
-		<section className="home" id="section-home">
+		<>
 			<div className="home_header_left_sidebar">
 				<div>
 					{/* <div
@@ -85,22 +85,8 @@ const HomeHeader = () => {
 						</li>
 					</ul>
 				</div>
-				<div className="home_title_btns">
-					<h1>
-						Zacznij pomagać! <br /> Oddaj niechciane rzeczy w zaufane ręce
-					</h1>
-					<img src={decoration} alt="decoration line"></img>
-					<div className="tabs">
-						<Link className="btn" to="/login">
-							ODDAJ <br /> RZECZY
-						</Link>
-						<Link className="btn" to="/login">
-							ZORGANIZUJ ZBÓRKĘ
-						</Link>
-					</div>
-				</div>
 			</div>
-		</section>
+		</>
 	);
 };
 
