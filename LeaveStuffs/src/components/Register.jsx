@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import decoration from "../assets/decoration.png";
 
-const LogIn = () => {
+const Register = () => {
 	return (
 		<div className="login_section">
-			<h2>Zaloguj się</h2>
+			<h2>Załóż konto</h2>
 			<img src={decoration} alt="decoration line" />
 			<div className="login_reg_main">
 				<form className="login_form">
@@ -17,17 +17,25 @@ const LogIn = () => {
 						<label for="password">Hasło</label>
 						<input type="password" name="password" id="password" />
 					</div>
+					<div>
+						<label for="confirm_password"> Powtórz hasło</label>
+						<input
+							type="password"
+							name="confirm_password"
+							id="confirm_password"
+						/>
+					</div>
 				</form>
 				<div className="login_buttons">
-					<Link to="/register" className="reg_btn_log_sec">
-						Załóż konto
+					<Link to="/login" className="reg_btn_log_sec">
+						Zaloguj się
 					</Link>
 					<button type="submit" className="login_btn">
-						Zaloguj się{" "}
+						Załóż konto
 					</button>
 				</div>
 			</div>
 		</div>
 	);
 };
-export default LogIn;
+export default Register;

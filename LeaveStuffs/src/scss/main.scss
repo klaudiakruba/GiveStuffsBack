@@ -473,7 +473,7 @@ body {
 	}
 }
 
-/***** LOG IN *****/
+/***** LOG IN and REGISTER *****/
 .login_section {
 	width: 100vw;
 	height: 100vh;
@@ -481,6 +481,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	color: $first-grey-color;
 	h2 {
 		font-size: 4rem;
 		padding-bottom: 3.9rem;
@@ -488,7 +489,7 @@ body {
 	img {
 		padding-bottom: 6rem;
 	}
-	.login_main {
+	.login_reg_main {
 		width: 50.3rem;
 		height: 32.5rem;
 		display: flex;
@@ -499,7 +500,6 @@ body {
 		display: flex;
 		width: 38.4rem;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
 		font-size: 1.6rem;
 		font-weight: 600;
@@ -521,7 +521,7 @@ body {
 	.login_buttons {
 		display: flex;
 		gap: 30.8rem;
-		align-items: stretch;
+
 		font-size: 1.8rem;
 		padding-top: 5.3rem;
 
@@ -535,4 +535,35 @@ body {
 			padding: 1.3rem 1.55rem 1.3rem 1.55rem;
 		}
 	}
+}
+
+/****** LOGOUT COMPONENT *****/
+.logout_section {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	h2 {
+		font-size: 4rem;
+		padding-bottom: 3.9rem;
+		text-align: center;
+		color: $first-grey-color;
+	}
+	img {
+		padding-bottom: 6rem;
+	}
+	.home_button {
+		text-decoration: none;
+		font-size: 1.8rem;
+		padding: 1.3rem 1.7rem;
+		border: 1px solid $first-grey-color;
+		color: #000;
+	}
+}
+
+.error_text {
+	color: red;
+	font-weight: 600;
 }
