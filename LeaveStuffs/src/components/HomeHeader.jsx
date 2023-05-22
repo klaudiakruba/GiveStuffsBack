@@ -3,7 +3,9 @@ import { Link, Outlet } from "react-router-dom";
 import heroImage from "../assets/Hero Image.png";
 
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-
+//funkcja musi wrocic do strony głownej i scrool w dol
+//1.router - userouter - push
+//2. handle linkclick : routerpush i
 const HomeHeader = () => {
 	return (
 		<>

@@ -7,10 +7,13 @@ import instagramIcon from "../assets/Instagram.png";
 const ContactUs = () => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
-	const [message, setMessage] = useState("");
+	const [message, setMessage] = useState(
+		`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`
+	);
 	const [nameError, setNameError] = useState("");
 	const [emailError, setEmailError] = useState("");
 	const [messageError, setMessageError] = useState("");
+
 	const validateEmail = (email) => {
 		return String(email)
 			.toLowerCase()
@@ -21,11 +24,14 @@ const ContactUs = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const nameTest = /^\S+$/;
+
 		if (name === "" || !nameTest.test(name)) {
 			setNameError("Podane imię jest nieprawidłowe!");
-		} else if (email === "" || !validateEmail(email)) {
+		}
+		if (email === "" || !validateEmail(email)) {
 			setEmailError("Podany email jest nieprawidłowy!");
-		} else if (message.length < 120) {
+		}
+		if (message.length < 120) {
 			setMessageError("Wiadomość musi mieć conajmniej 120 znaków");
 		}
 
@@ -82,12 +88,7 @@ const ContactUs = () => {
 								name="message"
 								value={message}
 								onChange={(e) => setMessage(e.target.value)}
-								className={messageError ? "error" : ""}>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation ullamco laboris
-								nisi ut aliquip ex ea commodo consequat.
-							</textarea>
+								className={messageError ? "error" : undefined}></textarea>
 							{messageError && (
 								<span className="error_text">{messageError}</span>
 							)}
