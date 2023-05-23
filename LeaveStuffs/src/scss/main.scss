@@ -357,7 +357,9 @@ body {
 		padding-bottom: 6.6rem;
 		display: flex;
 	}
-
+	ul {
+		height: 24.3rem;
+	}
 	.item_info {
 		border: 1px solid transparent;
 		border-bottom: 1px solid $thr-grey-color;
@@ -419,7 +421,7 @@ body {
 
 	.background_image {
 		width: 100vw;
-		height: 100%;
+		max-height: 100%;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -527,7 +529,6 @@ body {
 }
 .footer_sec {
 	margin-right: 14.2rem;
-	padding-bottom: 2rem;
 	display: flex;
 	align-items: center;
 	text-align: center;
@@ -535,7 +536,6 @@ body {
 	font-size: 1.8rem;
 	color: $first-grey-color;
 	z-index: 1;
-	margin-bottom: 2rem;
 	position: relative;
 	bottom: 4.6rem;
 
