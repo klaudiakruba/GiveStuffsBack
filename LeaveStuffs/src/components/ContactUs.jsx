@@ -39,7 +39,8 @@ const ContactUs = () => {
 			console.log("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
 		}
 	};
-
+	const API = fetch("https://fer-api.coderslab.pl/v1/portfolio/contact");
+	API.then((resp) => {});
 	return (
 		<>
 			<section className="contact_us_section" id="contact-us">
