@@ -21,6 +21,13 @@ const ContactUs = () => {
 				/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 			);
 	};
+	const API = "https://fer-api.coderslab.pl/v1/portfolio/contact";
+
+	const data = {
+		name: name,
+		email: email,
+		message: message,
+	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const nameTest = /^\S+$/;
@@ -38,9 +45,31 @@ const ContactUs = () => {
 		if (!nameError && !emailError && !messageError) {
 			console.log("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
 		}
+
+		fetch(API, {
+			method: "POST",
+			body: JSON.stringify(data),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+			.then((resp) => {
+				if (resp.ok) {
+					return resp.json();
+				}
+			})
+			.then((data) => {
+				if (data.status === "success") {
+					console.log("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
+				} else {
+					console.log("Błąd walidacji", data.errors);
+				}
+			})
+			.catch((err) => {
+				console.log("Bład", err);
+			});
 	};
-	const API = fetch("https://fer-api.coderslab.pl/v1/portfolio/contact");
-	API.then((resp) => {});
+
 	return (
 		<>
 			<section className="contact_us_section" id="contact-us">
