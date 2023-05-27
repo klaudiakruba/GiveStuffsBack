@@ -435,13 +435,25 @@ body {
 		justify-content: center;
 		align-items: center;
 		z-index: 1;
+		display: block;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
+
 	.title_section {
 		text-align: center;
 		padding-bottom: 7rem;
 		.form_title {
 			font-size: 3.8rem;
 			padding-bottom: 3.9rem;
+		}
+		.sent_form {
+			padding-top: 3rem;
+			color: green;
+			font-size: 1.6rem;
+			line-height: 2rem;
+			font-weight: 600;
 		}
 	}
 	.form_section {
@@ -472,9 +484,19 @@ body {
 						color: $sec-grey-color;
 						padding-bottom: 0.4rem;
 					}
+					&:focus {
+						outline: none;
+						border: 0.1rem dotted black;
+						background-color: $first-white-color;
+					}
 					&.error {
 						border-bottom: 1px solid red;
 					}
+				}
+				input[name="email"]:focus {
+					outline: none;
+					border: 0.1rem dotted black;
+					background-color: $first-white-color;
 				}
 			}
 		}
@@ -497,10 +519,20 @@ body {
 				resize: none;
 				font-size: 1.8rem;
 				font-family: $font-base;
-				color: $sec-grey-color;
+				color: black;
 				line-height: 2.4rem;
 				background-color: transparent;
 				margin-bottom: 0.6rem;
+				&::placeholder {
+					font-weight: 400;
+					color: $sec-grey-color;
+					padding-bottom: 0.4rem;
+				}
+				&:focus {
+					outline: none;
+					border: 0.1rem dotted black;
+					background-color: $first-white-color;
+				}
 			}
 
 			.error {
@@ -520,12 +552,11 @@ body {
 			right: 0;
 		}
 	}
-
-	.error_text {
-		display: block;
-		color: red;
-		font-weight: 600;
-	}
+}
+.error_text {
+	display: block;
+	color: red;
+	font-weight: 600;
 }
 .footer_sec {
 	margin-right: 14.2rem;
@@ -591,6 +622,18 @@ body {
 				height: 4rem;
 			}
 		}
+
+		.error {
+			border-bottom: 0.1rem solid red;
+		}
+
+		.error_text_log {
+			display: block;
+			color: red;
+			font-weight: 600;
+			font-size: 1rem;
+			line-height: 2rem;
+		}
 	}
 	.login_buttons {
 		display: flex;
@@ -601,12 +644,14 @@ body {
 
 		.reg_btn_log_sec {
 			text-decoration: none;
+			cursor: pointer;
 		}
 		.login_btn {
 			border-radius: 0;
 			background-color: transparent;
 			border: 1px solid $first-grey-color;
 			padding: 1.3rem 1.55rem 1.3rem 1.55rem;
+			cursor: pointer;
 		}
 	}
 }

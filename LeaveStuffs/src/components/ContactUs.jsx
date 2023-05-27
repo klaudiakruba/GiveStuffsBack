@@ -7,13 +7,11 @@ import instagramIcon from "../assets/Instagram.png";
 const ContactUs = () => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
-	const [message, setMessage] = useState(
-		`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`
-	);
+	const [message, setMessage] = useState("");
 	const [nameError, setNameError] = useState("");
 	const [emailError, setEmailError] = useState("");
 	const [messageError, setMessageError] = useState("");
-
+	const [sentForm, setSentForm] = useState(false);
 	const validateEmail = (email) => {
 		return String(email)
 			.toLowerCase()
@@ -28,8 +26,10 @@ const ContactUs = () => {
 		email: email,
 		message: message,
 	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
 		const nameTest = /^\S+$/;
 
 		if (name === "" || !nameTest.test(name)) {
@@ -43,7 +43,7 @@ const ContactUs = () => {
 		}
 
 		if (!nameError && !emailError && !messageError) {
-			console.log("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
+			setSentForm(true);
 		}
 
 		fetch(API, {
@@ -54,19 +54,26 @@ const ContactUs = () => {
 			},
 		})
 			.then((resp) => {
-				if (resp.ok) {
-					return resp.json();
+				console.log(resp);
+				if (!resp.ok) {
+					throw Error("Błąd wysyłania");
 				}
+				return resp.json();
 			})
 			.then((data) => {
 				if (data.status === "success") {
-					console.log("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
-				} else {
+					console.log("Success");
+					setName("");
+					setEmail("");
+					setMessage("");
+				} else if (data.status === "error" && data.errors) {
 					console.log("Błąd walidacji", data.errors);
+				} else {
+					console.log("Nieznany błąd");
 				}
 			})
 			.catch((err) => {
-				console.log("Bład", err);
+				console.log(err.message);
 			});
 	};
 
@@ -80,6 +87,12 @@ const ContactUs = () => {
 					<div className="title_section">
 						<h3 className="form_title">Skontaktuj się z nami</h3>
 						<img src={decoration} alt="decoration line"></img>
+						{sentForm && (
+							<p className="sent_form">
+								Wiadomość została wysłana!
+								<br /> Wkrótce się skontaktujemy.{" "}
+							</p>
+						)}
 					</div>
 					<form className="form_section" onSubmit={handleSubmit}>
 						<div className="first_form_sec">
@@ -118,6 +131,7 @@ const ContactUs = () => {
 								name="message"
 								value={message}
 								onChange={(e) => setMessage(e.target.value)}
+								placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 								className={messageError ? "error" : undefined}></textarea>
 							{messageError && (
 								<span className="error_text">{messageError}</span>
