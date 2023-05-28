@@ -12,6 +12,7 @@ const ContactUs = () => {
 	const [emailError, setEmailError] = useState("");
 	const [messageError, setMessageError] = useState("");
 	const [sentForm, setSentForm] = useState(false);
+
 	const validateEmail = (email) => {
 		return String(email)
 			.toLowerCase()
@@ -42,10 +43,6 @@ const ContactUs = () => {
 			setMessageError("Wiadomość musi mieć conajmniej 120 znaków");
 		}
 
-		if (!nameError && !emailError && !messageError) {
-			setSentForm(true);
-		}
-
 		fetch(API, {
 			method: "POST",
 			body: JSON.stringify(data),
@@ -54,7 +51,6 @@ const ContactUs = () => {
 			},
 		})
 			.then((resp) => {
-				console.log(resp);
 				if (!resp.ok) {
 					throw Error("Błąd wysyłania");
 				}
@@ -62,10 +58,12 @@ const ContactUs = () => {
 			})
 			.then((data) => {
 				if (data.status === "success") {
+					console.log(data);
 					console.log("Success");
 					setName("");
 					setEmail("");
 					setMessage("");
+					setSentForm(true);
 				} else if (data.status === "error" && data.errors) {
 					console.log("Błąd walidacji", data.errors);
 				} else {

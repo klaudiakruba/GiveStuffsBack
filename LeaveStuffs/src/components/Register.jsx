@@ -26,8 +26,8 @@ const Register = () => {
 		if (password === "" || password.length < 6) {
 			setPasswordError("Podane hasło jest za krótkie!");
 		}
-		if (confirmPassword !== password) {
-			setconfirmPasswordError("Błędne powtórzone hasło");
+		if (confirmPassword === "" || confirmPassword !== password) {
+			setconfirmPasswordError("Błędne hasło");
 		}
 		if (!emailError && !passwordError && !confirmPasswordError) {
 			setLogged(true);
@@ -60,10 +60,11 @@ const Register = () => {
 							onChange={(e) => setPassword(e.target.value)}
 							className={passwordError ? "error" : undefined}
 						/>
+						{passwordError && (
+							<span className="error_text_log">{passwordError}</span>
+						)}
 					</div>
-					{passwordError && (
-						<span className="error_text_log">{passwordError}</span>
-					)}
+
 					<div>
 						<label for="confirm_password"> Powtórz hasło</label>
 						<input
@@ -71,10 +72,10 @@ const Register = () => {
 							name="confirm_password"
 							id="confirm_password"
 							onChange={(e) => setPassword(e.target.value)}
-							className={passwordError ? "error" : undefined}
+							className={confirmPasswordError ? "error" : undefined}
 						/>
-						{passwordError && (
-							<span className="error_text_log">{passwordError}</span>
+						{confirmPasswordError && (
+							<span className="error_text_log">{confirmPasswordError}</span>
 						)}
 					</div>
 				</form>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import heroImage from "../assets/Hero Image.png";
 
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 //funkcja musi wrocic do strony głownej i scrool w dol
